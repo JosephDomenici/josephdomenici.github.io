@@ -1,39 +1,38 @@
-/*:root {
+:root {
 	--background-color: #F2F2F2;
 	--link-underline: #99CCFF;
 	--highlight-color: #E74832;
 	--font-color: #444444;
-}*/
+	--text-shadow: #E8E8E8;
+}
 
 title {
 	display: none;
-	font-family: 'Spartan', -apple-system, 'Nunito Sans', sans-serif;
 }
 
 body {
 	margin: 5% auto;
-	background: #F2F2F2;
-	color: #444444;
+	background: var(--background-color);
+	color: var(--font-color);
 	font-family: -apple-system, 'Nunito Sans', sans-serif;
 	font-size: 16px;
 	line-height: 1.8;
-	text-shadow: 0 1px 0 #E3E3E3;
+	text-shadow: 0 1px 0 var(--text-shadow);
 	max-width: 60%;
 	width: 45em;
 	height: 100%;
 }
 
 a {
-	color: #444444;
-	background: transparent linear-gradient(90deg, #99CCFF, #99CCFF) no-repeat 0 93%;
-	background-size: 100% 4px;
+	color: var(--font-color);
+	background: transparent linear-gradient(90deg, var(--link-underline), var(--link-underline)) no-repeat 0 93%;
+	background-size: 100% 3px;
 	text-shadow: none;
 	text-decoration: none;
 }
 
 a:hover {
-	border-bottom: 0;
-	box-shadow: inset 0 -25px 0 #99CCFF; 
+	box-shadow: 0 0 10em 0 var(--link-underline) inset; 
 }
 
 a.no-style {
@@ -46,44 +45,45 @@ a.no-style:hover {
 
 img {
 	background: none !important;
-	border-radius: 11px;
-	display: inline-block;
-	/* height: 100%; */
-	width: calc(100% - 0px);
+	border-radius: 17px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: calc(100% - 0em);
 }
 
 .title {
 	text-align: center;
-	font-size: 400%;
+	font-size: 350%;
+	font-family: 'Spartan', -apple-system, 'Nunito Sans', sans-serif;
 	font-weight: 600;
+	text-shadow: none;
+	/* transform: rotate(-90deg); */
 }
 
 hr {
   border: none;
-  background: #E74832;
-  color: #E74832;
-  height: 2px;
-  overflow: visible;
+  background: var(--highlight-color);
+  line-height: 2px;
   text-align: center;
 }
 
 hr:after {
-    background: #fff;
-    content: &#xa7;
-    padding: 0 4px;
-    position: relative;
-    top: 0px;
-	text-align: center;
+	color: var(--highlight-color);
+	background-color: var(--background-color);
+    content: '\002605';
+	display: inline-block;
+    padding: 0 0.3em;
 }
 
 table {
-	margin-top: -0.15em;
-	margin-left: 0.15em;
-	margin-bottom: 0em;
+	margin-top: -0.45em;
+	margin-bottom: -0.45em;
+	margin-left: 0.2em;
 }
 
 td {
-	text-indent: 0.5em;
-	padding-top: 0.1em;
-	padding-bottom: 0.1em;
+	text-indent: 0.45em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
 }
