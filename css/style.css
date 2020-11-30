@@ -58,21 +58,20 @@ img {
 }
 
 hr {
-	border: none;
-	color: #E74832;
-	height: 2px;
-	width: 100%;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+  border: none;
+  background: #E74832;
+  color: #E74832;
+  height: 2px;
+  overflow: visible;
+  text-align: center;
 }
 
 hr:after {
-	background: #FFFFFF;
-	content: '§';
-	padding: 0 4px;
-	position: relative;
-	top: -13px;
+    background: #fff;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: -8px;
 }
 
 table {
