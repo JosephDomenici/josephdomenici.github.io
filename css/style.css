@@ -1,10 +1,9 @@
 :root {
 	--background-color: #F2F2F2;
+	--link-underline: #99CCFF;
 	--highlight-color: #E74832;
-	/* --link-underline: #E7A332; */
-	--link-underline: #32D1E7;
-	--link-shadow: #99CCFF;
 	--font-color: #444444;
+	--text-shadow: #E8E8E8;
 }
 
 title {
@@ -15,23 +14,25 @@ body {
 	margin: 5% auto;
 	background: var(--background-color);
 	color: var(--font-color);
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: -apple-system, 'Nunito Sans', sans-serif;
 	font-size: 16px;
 	line-height: 1.8;
+	text-shadow: 0 1px 0 var(--text-shadow);
 	max-width: 60%;
 	width: 45em;
-	height: auto;
+	height: 100%;
 }
 
 a {
 	color: var(--font-color);
 	background: transparent linear-gradient(90deg, var(--link-underline), var(--link-underline)) no-repeat 0 93%;
-	background-size: 100% 2px;
+	background-size: 100% 3px;
+	text-shadow: none;
 	text-decoration: none;
 }
 
 a:hover {
-	box-shadow: 0 0 10em 0 var(--link-shadow) inset; 
+	box-shadow: 0 0 10em 0 var(--link-underline) inset; 
 }
 
 a.no-style {
@@ -51,6 +52,30 @@ img {
 	width: calc(100% - 0em);
 }
 
+.title {
+	text-align: center;
+	font-size: 350%;
+	font-family: 'Spartan', -apple-system, 'Nunito Sans', sans-serif;
+	font-weight: 600;
+	text-shadow: none;
+	/* transform: rotate(-90deg); */
+}
+
+hr {
+  border: none;
+  background: var(--highlight-color);
+  line-height: 2px;
+  text-align: center;
+}
+
+hr:after {
+	color: var(--highlight-color);
+	background-color: var(--background-color);
+    content: '\002605';
+	display: inline-block;
+    padding: 0 0.3em;
+}
+
 table {
 	margin-top: -0.45em;
 	margin-bottom: -0.45em;
@@ -61,39 +86,4 @@ td {
 	text-indent: 0.45em;
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
-}
-
-.text-highlight {
-	color: var(--highlight-color);
-}
-
-.title {
-	text-align: center;
-	font-size: 350%;
-	font-family: 'Spartan', 'Nunito Sans', sans-serif;
-	font-weight: 600;
-	user-select: none;
-	/* transform: rotate(-90deg); */
-}
-
-.separator {
-	display: flex;
-	align-items: center;
-	color: var(--highlight-color);
-	user-select: none;
-}
-
-.separator::before, .separator::after {
-	content: '';
-	flex: 1 1;
-	border-bottom: 2px solid var(--highlight-color);
-	margin: auto;
-}
-
-.separator::before {
-	margin-right: 0.25em;
-}
-
-.separator::after {
-	margin-left: 0.25em;
 }
