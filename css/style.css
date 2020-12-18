@@ -1,10 +1,10 @@
 :root {
-	--background-color: #F2F2F2;
+	--background-color: #F8F8F8;
 	--highlight-color: #E74832;
 	/* --link-underline: #E7A332; */
 	--link-underline: #32D1E7;
 	--link-shadow: #99CCFF;
-	--font-color: #444444;
+	--font-color: #333333;
 }
 
 title {
