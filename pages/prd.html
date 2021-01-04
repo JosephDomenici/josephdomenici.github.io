@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="Joseph Domenici" name="author">
+	
+	<title>Joseph Domenici | Personal Website</title>
+	
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../css/vertical-tab.css" rel="stylesheet" type="text/css">
+	<link href="../assets/icons/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github-gist.min.css">
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+	<!-- causes page to not load -->
+	<script type="application/javascript" src="../assets/scripts/prd.js"></script>
+</head>
+
+<body>
+<h1>Overview</h1>
+
+<div class="container">
+	<p>P(N) = (C * N) + B</p>
+	<div class="tab-wrap">
+		<input type="radio" id="p-from-c" name="tabs" class="tab" checked>
+		<label for="p-from-c">Calculating P from C</label>
+		<input type="radio" id="c-from-p" name="tabs" class="tab">
+		<label for="c-from-p">Calculating C from P</label>
+		<div class="tab__content">
+			<h3>Calculating P from C</h3>
+			<input type="text" id="c" value="0.2"/>
+			<button type="button" onclick="simulateP()">P From C</button>
+			<p id="p-result">Test</p>
+			<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+		</div>
+		<div class="tab__content">
+			<h3>Calculating C from P</h3>
+			<input type="text" id="p" value="0.2"/>
+			<button type="button" onclick="simulateC()">P From C</button>
+			<p id="c-result">Test</p>
+			<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+			<p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Morbi mattis ullamcorper velit. Pellentesque posuere. Etiam ut purus mattis mauris sodales aliquam. Praesent nec nisl a purus blandit viverra.</p>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
