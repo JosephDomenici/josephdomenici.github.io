@@ -1,3 +1,7 @@
+h1 {
+	text-align: center;
+}
+
 .tab-wrap {
   transition: 0.3s box-shadow ease;
   border-radius: 6px;
@@ -129,7 +133,7 @@
   border-radius: 6px;
 }
 
-/* boring stuff */
+/* boring stuff
 body {
   font-family: 'Helvetica', sans-serif;
   background-color: #e7e7e7;
@@ -169,3 +173,4 @@ p {
   line-height: 1.6;
   margin-bottom: 20px;
 }
+*/
