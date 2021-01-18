@@ -2,6 +2,24 @@ h1 {
 	text-align: center;
 }
 
+input:focus {
+	outline: none;
+}
+
+input[type=range] {
+	width: 90%;
+}
+
+input[type=text] {
+	margin-left: 10px;
+}
+
+.center {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+}
+
 .tab-wrap {
   transition: 0.3s box-shadow ease;
   border-radius: 6px;
@@ -91,11 +109,15 @@ h1 {
   background-color: #fff;
   box-shadow: 0 -1px 0 #fff inset;
   cursor: default;
+  text-decoration: underline;
+  text-underline-offset: 3px
 }
 
 .tab:checked + label:hover {
   box-shadow: 0 -1px 0 #fff inset;
   background-color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .tab + label {
@@ -104,12 +126,10 @@ h1 {
   cursor: pointer;
   display: block;
   text-decoration: none;
-  color: #333;
   flex-grow: 3;
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #e8e8e8;
   user-select: none;
-  text-align: center;
   transition: 0.3s background-color ease, 0.3s box-shadow ease;
   height: 50px;
   box-sizing: border-box;
@@ -117,8 +137,8 @@ h1 {
 }
 
 .tab + label:hover {
-  background-color: #f9f9f9;
-  box-shadow: 0 1px 0 #f4f4f4 inset;
+  background-color: #f1f1f1;
+  box-shadow: 0 100px 0 #f4f4f4 inset;
 }
 
 .tab__content {
