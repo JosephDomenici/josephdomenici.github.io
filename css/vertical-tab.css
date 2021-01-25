@@ -7,7 +7,11 @@ input:focus {
 }
 
 input[type=range] {
-	width: 90%;
+	width: calc(100% - 100px);
+}
+
+input[type=text] {
+	width: 100px;
 }
 
 input[type=text] {
@@ -145,7 +149,7 @@ input[type=text] {
   padding: 10px 25px;
   background-color: transparent;
   position: absolute;
-  width: 100%;
+  max-width: 100%;
   z-index: -1;
   opacity: 0;
   left: 0;
