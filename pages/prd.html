@@ -28,33 +28,16 @@
 <h1>On the Pseudo-Random Distribution</h1>
 <h2>What is PRD?</h2>
 <p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-<div class="container">
-	<div class="tab-wrap">
-		<input type="radio" id="tab-p-from-c" name="tabs" class="tab" checked/>
-		<label for="tab-p-from-c">Calculating P from C</label>
-		<input type="radio" id="tab-c-from-p" name="tabs" class="tab"/>
-		<label for="tab-c-from-p">Calculating C from P</label>
-		<div class="tab__content">
-			<h3>Calculating P from C</h3>
-			<div class="center">
-				<input id="slider-p-from-c" type="range" min="0.0001" max="0.9999" value="0.2" step="0.0001"/>
-				<input type="text" id="input-p-from-c" value="0.2"/>
-			</div>
-			<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-			<canvas id="chart-p"></canvas>
-		</div>
-		<div class="tab__content">
-			<h3>Calculating C from P</h3>
-			<div class="center">
-				<input id="slider-c-from-p" type="range" min="0.0001" max="0.9999" value="0.2" step="0.0001"/>
-				<input type="text" id="input-c-from-p" value="0.2"/>
-			</div>
-			<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-			<p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Morbi mattis ullamcorper velit. Pellentesque posuere. Etiam ut purus mattis mauris sodales aliquam. Praesent nec nisl a purus blandit viverra.</p>
-			<canvas id="chart-c"></canvas>
-		</div>
-	</div>
-</div>
-</body>
+<h2>Calculating P from C</h2>
 
+<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+<div class="chart-container" style="position: relative">
+	<div class="center chart-container">
+		<input type="text" id="input-p-from-c" value="0.2"/>
+		<input id="slider-p-from-c" type="range" min="0.0001" max="0.9999" value="0.2" step="0.0001"/>
+	</div>
+	<canvas id="chart-p"></canvas>
+</div>
+
+</body>
 </html>

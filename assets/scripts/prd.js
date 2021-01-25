@@ -31,7 +31,7 @@ function createChartP()
 		data: {
 			labels: p.trials,
 			datasets: [{
-				label: "% per trial",
+				label: "Trial % frequency",
 				data: p.data,
 				borderColor: "#3e95cd",
 				fill: false
@@ -45,8 +45,25 @@ function createChartP()
 		options: {
 			title: {
 				display: true,
+				fontColor: "#333333",
+				fontFamily: "'Nunito Sans', sans-serif",
+				fontSize: 16,
+				fontStyle: 'bold',
+				position: 'top',
 				text: "(P) = " + (Math.round(p.value * 10000) / 100).toFixed(2) + "%"
-			}
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+						max: 1,
+						stepSize: 0.1
+					}
+				}]
+			},
+			responsive: true,
+			aspectRatio: 1,
+			maintainAspectRatio: true
 		}
 	});
 }
@@ -108,7 +125,7 @@ function simulateP()
 	
 	chartP.data.labels = p.trials;
 	chartP.data.datasets = [{
-		label: "% per trial",
+		label: "Trial % frequency",
 		data: p.data,
 		borderColor: "#3e95cd",
 		fill: false
@@ -120,9 +137,22 @@ function simulateP()
 	}];
 	chartP.options = {
 		title: {
-			display: true,
-			position: 'top',
-			text: "(P) = " + (Math.round(p.value * 10000) / 100).toFixed(2) + "%"
+				display: true,
+				fontColor: "#333333",
+				fontFamily: "'Nunito Sans', sans-serif",
+				fontSize: 16,
+				fontStyle: 'bold',
+				position: 'top',
+				text: "(P) = " + (Math.round(p.value * 10000) / 100).toFixed(2) + "%"
+		},
+		scales: {
+			yAxes: [{
+				ticks: {
+					min: 0,
+					max: 1,
+					stepSize: 0.1
+				}
+			}]
 		}
 	};
 	
