@@ -1,7 +1,6 @@
 :root {
 	--background-color: #F8F8F8;
 	--highlight-color: #E74832;
-	/* --link-underline: #E7A332; */
 	--link-underline: #32D1E7;
 	--link-shadow: #99CCFF;
 	--genius-header-footer-background: #FFFF6490;
@@ -17,16 +16,24 @@ title {
 }
 
 body {
-	margin: 5% auto;
-	background: var(--background-color);
+	margin: 0px auto 50px;
+	background-color: var(--background-color);
 	color: var(--font-color);
 	font-family: 'Nunito Sans', sans-serif;
-	font-size: 16px;
-	line-height: 1.8;
+	font-size: 1em;
 	max-width: 60%;
+	line-height: 1.8;
 	width: 45em;
 	height: auto;
 	word-break: break-word;
+}
+
+@media all and (max-width: 800px) {
+	
+	body {
+		max-width: 85% !important;
+		font-size: .75em !important;
+	}
 }
 
 a {
