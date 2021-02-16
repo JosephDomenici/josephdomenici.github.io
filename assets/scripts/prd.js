@@ -5,7 +5,7 @@ var inputCFromP;
 var chartP;
 var chartC;
 
-window.onload = function()
+function initializeChart()
 {
 	var sliders = document.querySelectorAll("input[type=range]");
 	for (var i = 0; i < sliders.length; i++) { sliders[i].addEventListener('input', updateValue); }
@@ -31,7 +31,7 @@ function createChartP()
 		data: {
 			labels: p.trials,
 			datasets: [{
-				label: "Trial % frequency",
+				label: "Frequency distribution",
 				data: p.data,
 				borderColor: "#3e95cd",
 				fill: false
@@ -62,7 +62,7 @@ function createChartP()
 				}]
 			},
 			responsive: true,
-			aspectRatio: 1,
+			aspectRatio: 1.618033988749895,
 			maintainAspectRatio: true
 		}
 	});
@@ -125,7 +125,7 @@ function simulateP()
 	
 	chartP.data.labels = p.trials;
 	chartP.data.datasets = [{
-		label: "Trial % frequency",
+		label: "Frequency distribution",
 		data: p.data,
 		borderColor: "#3e95cd",
 		fill: false

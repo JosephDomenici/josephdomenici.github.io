@@ -1,14 +1,21 @@
 :root {
 	--background-color: #F8F8F8;
 	--highlight-color: #E74832;
-	--link-underline: #32D1E7;
-	--link-shadow: #99CCFF;
+	--link-underline: #ffd204;
+	--link-inset: #ffd204;
 	--genius-header-footer-background: #FFFF6490;
 	--genius-header-footer-background-hover: #FFFF64;
-	--font-color: #333333;
+	--font-color: #191919;
 	
 	tab-size: 4;
 	-moz-tab-size: 4;
+	
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+:root::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, and Opera */
 }
 
 title {
@@ -16,35 +23,29 @@ title {
 }
 
 body {
-	margin: 0px auto 50px;
 	background-color: var(--background-color);
 	color: var(--font-color);
 	font-family: 'Nunito Sans', sans-serif;
-	font-size: 1em;
-	max-width: 60%;
-	line-height: 1.8;
-	width: 45em;
+	font-size: calc(14px + (3 * ((100vw - 300px) / (1920 - 300))));
+	line-height: 1.618033988749895;
 	height: auto;
+	margin: 0px auto 50px;
 	word-break: break-word;
 }
 
-@media all and (max-width: 800px) {
-	
-	body {
-		max-width: 85% !important;
-		font-size: .75em !important;
-	}
-}
-
 a {
-	color: var(--font-color);
-	background: transparent linear-gradient(90deg, var(--link-underline), var(--link-underline)) no-repeat 0 93%;
-	background-size: 100% 2px;
+	color: inherit;
 	text-decoration: none;
+	font-weight: bold;
+	font-size: inherit;
+	
+    box-shadow: 0 -2px 0 0 var(--link-inset) inset;
+    -webkit-transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
 }
 
 a:hover {
-	box-shadow: 0 0 10em 0 var(--link-shadow) inset; 
+	box-shadow: inset 0 -2em 0 -1px var(--link-inset);
 }
 
 a.no-style {
@@ -61,7 +62,7 @@ img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: calc(100% - 0em);
+	width: 100%;
 }
 
 table {
@@ -87,10 +88,9 @@ pre code {
 .title {
 	text-align: center;
 	font-size: 350%;
-	font-family: 'Spartan', 'Nunito Sans', sans-serif;
+	font-family: 'Nunito Sans', sans-serif;
 	font-weight: 600;
 	user-select: none;
-	/* transform: rotate(-90deg); */
 }
 
 .separator {
