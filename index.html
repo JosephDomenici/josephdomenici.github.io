@@ -8,13 +8,18 @@
 	
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link href="assets/icons/favicon.ico" rel="shortcut icon" type="image/x-icon">
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github-gist.min.css">
-	<script>hljs.initHighlightingOnLoad();</script>
+
 	
 	<!-- resize width -->
 	<script type="application/javascript" src="assets/scripts/dynamic-width.js"></script>
+	
+	<!-- onload functions -->
+	<script>
+		window.onload = function()
+		{
+			resizeWidth();
+		}
+	</script>
 </head>
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
