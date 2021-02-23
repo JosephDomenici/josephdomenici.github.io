@@ -1,44 +1,28 @@
-.section {
-	font-size: 1em;
+:root {
+	--hover-scale: 1.05;
 }
 
-.section h2 {
-	margin: 0;
-	text-align: center;
-}
-
-.section__header {
-	position: sticky;
-	top: 0;
-	padding: 1em;
-	background: #E1E1E1;
-}
-
-.section__content {
-	padding: 1em;
-	display: flex;
-	justify-content: center;
-}
-
-p {
-	counter-increment: paragraph;
-	text-indent: 0px;
+.box {
+	counter-increment: box;
 	
+	display: inline-block;
 	background-color: #FFFFFF;
-	border-radius: 6px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
-	padding: 15px;
-	transition: 0.2s box-shadow ease;
+	margin-top: 30px;
+	padding: 20px;
+	
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+	-webkit-transition: all 0.3s cubic-bezier(0.165, .84, .44, 1);
+	transition: all 0.3s cubic-bezier(0.165, .84, .44, 1);
 }
 
-p:hover {
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+.box::before {
+	positive: relative;
+	content: counter(paragraph);
 }
 
-p::before {
-	text-indent: 0px;
-	padding: .5em;
-	font-size: 85%;
-	position: relative;
-	content: counter(paragraph) ".";
+.box:hover {
+  -webkit-transform: scale(var(--hover-scale), var(--hover-scale));
+  transform: scale(var(--hover-scale), var(--hover-scale));
+  
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
 }

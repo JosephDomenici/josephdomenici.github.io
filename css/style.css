@@ -1,11 +1,9 @@
 :root {
-	--background-color: #F8F8F8;
+	--background-color: #F1F1F1;
+	--font-color: #444444;
+	--link-inset: #3ECCF0;
 	--highlight-color: #E74832;
-	--link-underline: #ffd204;
-	--link-inset: #ffd204;
-	--genius-header-footer-background: #FFFF6490;
-	--genius-header-footer-background-hover: #FFFF64;
-	--font-color: #191919;
+	--page-content: #F9F9F9;
 	
 	tab-size: 4;
 	-moz-tab-size: 4;
@@ -18,79 +16,94 @@
 	display: none; /* Chrome, Safari, and Opera */
 }
 
-title {
-	display: none;
-}
-
 body {
 	background-color: var(--background-color);
 	color: var(--font-color);
-	font-family: 'Nunito Sans', sans-serif;
-	font-size: calc(14px + (3 * ((100vw - 300px) / (1920 - 300))));
-	line-height: 1.618033988749895;
-	height: auto;
-	margin: 0px auto 50px;
+	font-family: 'Lato', 'Open Sans', sans-serif;
+	line-height: 1.7;
+	margin: 25px auto;
+	max-width: 800px;
 	word-break: break-word;
 }
 
+body, td {
+	font-size: calc(15px + (3 * ((100vw - 300px) / (1920 - 300))));
+}
+
+/* Mobile screens */
+@media all and (max-width: 800px) {
+	.page-content {
+		margin: 10px;
+	}
+}
+
+/* Full-width screens */
+@media all and (min-width: 801px) {
+}
+
 a {
-	color: inherit;
-	text-decoration: none;
-	font-weight: bold;
+	border-bottom: 1px solid;
+	color: #2c96c7;
+	font-weight: 600;
 	font-size: inherit;
-	
-    box-shadow: 0 -2px 0 0 var(--link-inset) inset;
-    -webkit-transition: box-shadow .1s ease-in-out;
-    transition: box-shadow .1s ease-in-out;
+	text-decoration: none;
 }
 
-a:hover {
-	box-shadow: inset 0 -2em 0 -1px var(--link-inset);
-}
-
-a.no-style {
-	background: none !important;
-}
-
-a.no-style:hover {
-	box-shadow: none !important;
+a:hover, a:focus {
+	border-bottom: 2px solid;
+	color: var(--highlight-color);
 }
 
 img {
-	background: none !important;
-	border-radius: 17px;
+	border: 3px solid var(--font-color);
+	border-radius: 10px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 }
 
-table {
-	margin-top: -0.45em;
-	margin-bottom: -0.45em;
-	margin-left: 0.2em;
+.grid {
+	display: grid;
+	gap: 40px;
+	grid-template-areas: "1 2";
+	grid-template-columns: repeat(auto-fit, 1fr);
 }
 
-td {
-	text-indent: 0.45em;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
+.grid-box {
+	margin: auto;
 }
 
-pre code {
-	font-size: 14px !important;
+.info-table {
+	margin-top: -.5em;
 }
 
-.text-highlight {
-	color: var(--highlight-color);
+.info-table td {
+	text-indent: 0.3em;
+	padding: .2em 0 .2em .2em;
 }
 
-.title {
-	text-align: center;
-	font-size: 350%;
-	font-family: 'Nunito Sans', sans-serif;
+.page-content {
+	background: var(--page-content);
+	padding: 20px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+	margin-top: 1em;
+}
+
+.quote, .formula {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 2em;
 	font-weight: 600;
-	user-select: none;
+	text-align: center;
+	tex-transform: uppercase;
+}
+
+.quote::before {
+	content: '“';
+}
+
+.quote::after {
+	content: '”';
 }
 
 .separator {
@@ -98,13 +111,6 @@ pre code {
 	align-items: center;
 	color: var(--highlight-color);
 	user-select: none;
-}
-
-.separator::before, .separator::after {
-	content: '';
-	flex: 1 1;
-	border-bottom: 2px solid var(--highlight-color);
-	margin: auto;
 }
 
 .separator::before {
@@ -115,51 +121,19 @@ pre code {
 	margin-left: 0.25em;
 }
 
-/*
-[data-highlight-class] {
-	word-break: break-all;
-}
-*/
-/*
-.has_pinned_annotation {
-	background-color: #FFFF6490 !important;
+.separator::before, .separator::after {
+	content: '';
+	flex: 1 1;
+	border-bottom: 2px solid var(--highlight-color);
+	margin: auto;
 }
 
-.has_pinned_annotation:hover {
-	background-color: #FFFF64 !important;
-}
-*/
-
-.rg_embed {
-	width: 100% !important;
-	background-color: #FFFFFF !important;
-	/* margin: 0 !important; */
+.text-highlight {
+	color: var(--highlight-color);
 }
 
-.rg_embed_body {
-	padding-top: 0px !important;
-	margin-top: -20px !important;
-	padding-bottom: 0px !important;
-	overflow: auto !important;
-	font-size: 14px !important;
-	background-color: #FFFFFF !important;
-}
-
-.rg_embed .rg_embed_body a {
-	box-shadow: none !important;
-	background-size: 0% !important;
-}
-
-.rg_embed_header a, .rg_embed_footer a {
-	background-size: 0% !important;
-}
-
-.rg_embed_footer a {
-	background-color: var(--genius-header-footer-background) !important;
-}
-
-.rg_embed_header a:hover, .rg_embed_footer a:hover {
-	background-size: 0% !important;
-	background-color: var(--genius-header-footer-background-hover) !important;
-	box-shadow: none !important;
+.title {
+	text-align: center;
+	font-size: 3.5em;
+	user-select: none;
 }

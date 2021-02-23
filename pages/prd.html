@@ -17,54 +17,47 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 	<script type="application/javascript" src="../assets/scripts/prd.js"></script>
 	
-	<!-- resize width -->
-	<script type="application/javascript" src="../assets/scripts/dynamic-width.js"></script>
-	
 	<!-- onload functions -->
 	<script>
 		window.onload = function()
 		{
 			initializeChart();
-			resizeWidth();
 		}
 	</script>
 </head>
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
-</style>
 
 <body>
-<br>
-<div class="title">🧮</div>
-<h1>On the Pseudo-Random Distribution</h1>
-<p>The pseudo-random distribution <b>(PRD)</b> is a probabilistic system ported to Dota 2 from the Warcraft 3 engine (ca. 2012). It represents an improvement over traditional forms of randomness in digital games.</p>
-<div class="separator">★</div>
-<p>When we think of randomness in games, we typically think of independent die rolls determining the outcomes of events. Independent rolls possess some useful properties for game development:</p>
-<ul>
-<li>Easy to balance</li>
-<li>Easy to reason about</li>
-<li>Simple to implement in both analog and digital titles</li>
-</ul>
-<p>They also possess a particularly annoying property, in that there's no guarantee of success (or failure) within any number of trials. Hot and cold streaks are an intrinsic part of the system.</p>
-<p>The PRD addresses this by </p>
-<p>The probability for a given trial is calculated as:</p>
-<div class="formula">P(N) = C * N</div>
-<ul>
-<li><b>C:</b> pre-calculated float value</li>
-<li><b>N:</b> integer representing the n<sup>th</sup> trial</li>
-</ul> 
+	<div class="title">🧮</div>
+	<div class="page-content">
+		<h1>On the Pseudo-Random Distribution</h1>
+		<p>The pseudo-random distribution <b>(PRD)</b> is a probabilistic system ported to Dota 2 from the Warcraft 3 engine (ca. 2012). It represents an improvement over traditional forms of randomness in digital games.</p>
+		<div class="separator">★</div>
+		<p>When we think of randomness in games, we typically think of independent die rolls determining the outcomes of events. Independent rolls possess some useful properties for game development:</p>
+		<ul>
+		<li>Easy to balance</li>
+		<li>Easy to reason about</li>
+		<li>Simple to implement in both analog and digital titles</li>
+		</ul>
+		<p>They also possess a particularly annoying property, in that there's no guarantee of success (or failure) within any number of trials. Hot and cold streaks are an intrinsic part of the system.</p>
+		<p>The PRD addresses this by </p>
+		<p>The probability for a given trial is calculated as:</p>
+		<div class="formula">P(N) = C * N</div>
+		<ul>
+		<li><b>C:</b> pre-calculated float value</li>
+		<li><b>N:</b> integer representing the n<sup>th</sup> trial</li>
+		</ul> 
 
-<p>In spite of its name, the PRD is not a true pseudo-random </p>
-<h2>Calculating P from C</h2>
+		<p>In spite of its name, the PRD is not a true pseudo-random </p>
+		<h2>Calculating P from C</h2>
 
-<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-<div class="container" style="position: relative">
-	<div class="center container">
-		<input type="text" id="input-p-from-c" value="0.03222"/>
-		<input id="slider-p-from-c" type="range" min="0.0001" max="0.9999" value="0.03222" step="0.0001"/>
+		<p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Nullam accumsan lorem in dui. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+		<div class="container" style="position: relative">
+			<div class="center container">
+				<input type="text" id="input-p-from-c" value="0.03222"/>
+				<input id="slider-p-from-c" type="range" min="0.0001" max="0.9999" value="0.03222" step="0.0001"/>
+			</div>
+			<canvas id="chart-p"></canvas>
+		</div>
 	</div>
-	<canvas id="chart-p"></canvas>
-</div>
-
 </body>
 </html>
