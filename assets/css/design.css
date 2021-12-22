@@ -1,0 +1,121 @@
+@import url(fontawesome-all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap');
+
+@media(prefers-color-scheme: dark) {
+    body {
+		
+    }
+	
+    a:link {
+		
+    }
+	
+    a:visited {
+		
+    }
+}
+
+html {
+	background-color: #FDFDFD;
+	color: #333;
+}
+
+.container {
+	width: 90%;
+	max-width: 650px;
+	margin: auto auto 100px;
+}
+
+.logo {
+	margin: auto;
+	text-align: center;
+}
+
+p {
+	margin: 0 0 20px;
+}
+
+p, li {
+	font-family: Helvetica, "Source Sans Pro", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.4em;
+}
+
+a {
+	color: #0078D7; /* #0078D7 #049CCF */
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.logo a {
+	color: #333;
+}
+
+blockquote {
+	border-left: 4px solid #CCCCCC;
+	margin: auto;
+}
+
+blockquote p {
+	font-weight: 600;
+	font-style: italic;
+}
+
+blockquote p:before {
+	content: open-quote;
+}
+
+blockquote p:after {
+	content: close-quote;
+}
+
+blockquote p {
+	margin: 0 0 20px 20px;
+}
+
+.logo h1 {
+	font-family: "Oleo Script Swash Caps", Impact, serif;
+	font-size: 70px;
+	font-weight: 900;
+	margin: 50px 0 20px;
+	line-height: 1em;
+	text-shadow: 2px 2px rgba(0, 84, 151, .5);
+}
+
+.navigation ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+}
+
+.navigation ul li {
+	padding: 0;
+	margin: 0;
+	flex: 1;
+	text-align: center;
+}
+
+.header {
+	border-top: 2px solid #000;
+}
+
+.header h1 {
+	font-family: "Georgia", "Times New Roman", serif;
+	font-size: 28px;
+	
+	font-weight: 300;
+}
+
+.content {
+	margin: 20px 0 0;
+}
+
+.footer {
+	border-top: 2px solid #000;
+}
+
+.footer p {
+	margin: 10px 0 0;
+}
