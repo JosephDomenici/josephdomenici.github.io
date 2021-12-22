@@ -41,12 +41,18 @@ p, li {
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 1.4em;
+	word-spacing: 0px;
 }
 
 a {
 	color: #0078D7; /* #0078D7 #049CCF */
 	text-decoration: none;
 	font-weight: bold;
+}
+
+.no-link {
+	text-decoration: none;
+	border-bottom: 0;
 }
 
 .logo a {
