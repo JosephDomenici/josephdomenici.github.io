@@ -1,24 +1,92 @@
 @import url(fontawesome-all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @media(prefers-color-scheme: dark) {
     body {
 		
     }
 	
-    a:link {
-		
-    }
-	
-    a:visited {
+    a {
 		
     }
 }
 
+:root {
+	--text-color: #333;
+	--link-color: #0078D7;
+	--link-hover-color: #FF0080;
+}
+
 html {
-	background-color: #FDFDFD;
+	background-color: #FCFCFC;
+	color: var(--text-color);
+	scroll-behavior: smooth;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+	font-weight: bold;
+	transition: .2s;
+}
+
+a:hover, a:active {
+	color: var(--link-hover-color);
+}
+
+h1 {
+	color: #FFF;
+	font-family: "Montserrat";
+	font-size: 40px;
+	font-weight: 900;
+	margin: 15px 0 0;
+	letter-spacing: .03em;
+	text-shadow: -1px 1px 0 #000,
+				 1px 3px 0 #00000090,
+				 1px -1px 0 #000,
+				 -1px -1px 0 #000;
+}
+
+p, li {
+	font-family: "Segoe UI", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.66em;
+	word-spacing: 0px;
+}
+
+p {
+	margin: 0 0 20px;
+}
+
+.portfolio {
+	
+}
+
+.portfolio-entry {
+	box-shadow: 0 0 2px #00000075;
+	padding: 20px;
+	transition: .3s;
+	margin: 0 0 20px;
+}
+
+.portfolio-entry:hover {
+	box-shadow: 0 0 3px #000000;
+}
+
+.portfolio-entry > h2 {
+	margin: 0 0 20px;
+	font-family: "Segoe UI", sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+	word-spacing: 0px;
+}
+
+.portfolio-entry > p {
 	color: #333;
+	margin: 0;
 }
 
 .container {
@@ -28,66 +96,25 @@ html {
 }
 
 .logo {
-	margin: auto;
+	margin: 50px 0 20px;
 	text-align: center;
 }
 
-p {
-	margin: 0 0 20px;
-}
-
-p, li {
-	font-family: Helvetica, "Source Sans Pro", sans-serif;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 1.4em;
-	word-spacing: 0px;
-}
-
-a {
-	color: #0078D7; /* #0078D7 #049CCF */
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.no-link {
-	text-decoration: none;
-	border-bottom: 0;
-}
-
 .logo a {
-	color: #333;
-}
-
-blockquote {
-	border-left: 4px solid #CCCCCC;
-	margin: auto;
-}
-
-blockquote p {
-	font-weight: 600;
-	font-style: italic;
-}
-
-blockquote p:before {
-	content: open-quote;
-}
-
-blockquote p:after {
-	content: close-quote;
-}
-
-blockquote p {
-	margin: 0 0 20px 20px;
-}
-
-.logo h1 {
-	font-family: "Oleo Script Swash Caps", Impact, serif;
-	font-size: 70px;
+	color: #FFF;
+	font-family: "Montserrat";
+	font-size: 40px;
 	font-weight: 900;
-	margin: 50px 0 20px;
+	letter-spacing: .03em;
 	line-height: 1em;
-	text-shadow: 2px 2px rgba(0, 84, 151, .5);
+	text-shadow: -1px 1px 0 #000,
+				 1px 3px 0 #00000090,
+				 1px -1px 0 #000,
+				 -1px -1px 0 #000;
+}
+
+.navigation {
+	border-top: 1px solid #000;
 }
 
 .navigation ul {
@@ -104,14 +131,7 @@ blockquote p {
 }
 
 .header {
-	border-top: 2px solid #000;
-}
-
-.header h1 {
-	font-family: "Georgia", "Times New Roman", serif;
-	font-size: 28px;
-	
-	font-weight: 300;
+	border-top: 1px solid #000;
 }
 
 .content {
@@ -119,9 +139,36 @@ blockquote p {
 }
 
 .footer {
-	border-top: 2px solid #000;
+	border-top: 1px solid #000;
 }
 
 .footer p {
 	margin: 10px 0 0;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+blockquote {
+	border-left: 4px solid #CCCCCC;
+	margin: auto;
+}
+
+blockquote p {
+	font-weight: 600;
+	font-style: italic;
+	margin: 0 0 20px 20px;
+}
+
+blockquote p:before {
+	content: open-quote;
+}
+
+blockquote p:after {
+	content: close-quote;
 }
