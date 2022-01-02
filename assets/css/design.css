@@ -17,23 +17,26 @@
 	--text-color: #333;
 	--link-color: #0078D7;
 	--link-hover-color: #FF0080;
+	--link-hover-underline-color: #0078D790;
 }
 
 html {
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+	
 	background-color: #FCFCFC;
 	color: var(--text-color);
-	scroll-behavior: smooth;
 }
 
 a {
 	color: var(--link-color);
 	text-decoration: none;
 	font-weight: bold;
-	transition: .2s;
 }
 
-a:hover, a:active {
-	color: var(--link-hover-color);
+a:hover, a:focus, a:active {
+	/* color: var(--link-hover-color); */
+	border-bottom: 2px solid var(--link-hover-underline-color);
 }
 
 h1 {
@@ -68,12 +71,11 @@ p {
 .portfolio-entry {
 	box-shadow: 0 0 2px #00000075;
 	padding: 20px;
-	transition: .3s;
 	margin: 0 0 20px;
 }
 
 .portfolio-entry:hover {
-	box-shadow: 0 0 3px #000000;
+	
 }
 
 .portfolio-entry > h2 {
@@ -86,7 +88,7 @@ p {
 
 .portfolio-entry > p {
 	color: #333;
-	margin: 0;
+	margin: 20px 0 0;
 }
 
 .container {
