@@ -1,159 +1,92 @@
+/* Imports */
+
 @import url(fontawesome-all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@media(prefers-color-scheme: dark) {
-    body {
-		
-    }
+/* Base style */
+:root {
+	/* https://www.sessions.edu/color-calculator/ */
 	
-    a {
-		
-    }
+	--background-color: #FCFCFC;
+	--text-color: #333;
+	--text-highlight-color: khaki;
+	--link-color: deepskyblue;
+	--portfolio-background-color: tomato; /* aquamarine cadetblue deepskyblue khaki tomato */
+	--portfolio-buttons-color: #FFF;
 }
 
-:root {
-	--text-color: #333;
-	--link-color: #0078D7;
-	--link-hover-color: #FF0080;
-	--link-hover-underline-color: #0078D790;
+@media(prefers-color-scheme: dark) {
+    :root {
+		--background-color: #333;
+		--text-color: #FCFCFC;
+	}
 }
 
 html {
 	scroll-behavior: smooth;
 	text-rendering: optimizeLegibility;
 	
-	background-color: #FCFCFC;
+	font-family: "Segoe UI";
+	background-color: var(--background-color);
 	color: var(--text-color);
-}
-
-a {
-	color: var(--link-color);
-	text-decoration: none;
-	font-weight: bold;
-}
-
-a:hover, a:focus, a:active {
-	/* color: var(--link-hover-color); */
-	border-bottom: 2px solid var(--link-hover-underline-color);
-}
-
-h1 {
-	color: #FFF;
-	font-family: "Montserrat";
-	font-size: 40px;
-	font-weight: 900;
-	margin: 15px 0 0;
-	letter-spacing: .03em;
-	text-shadow: -1px 1px 0 #000,
-				 1px 3px 0 #00000090,
-				 1px -1px 0 #000,
-				 -1px -1px 0 #000;
-}
-
-p, li {
-	font-family: "Segoe UI", sans-serif;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 1.66em;
-	word-spacing: 0px;
-}
-
-p {
-	margin: 0 0 20px;
-}
-
-.portfolio {
 	
-}
-
-.portfolio-entry {
-	box-shadow: 0 0 2px #00000075;
-	padding: 20px;
-	margin: 0 0 20px;
-}
-
-.portfolio-entry:hover {
-	
-}
-
-.portfolio-entry > h2 {
-	margin: 0 0 20px;
-	font-family: "Segoe UI", sans-serif;
-	font-weight: 700;
-	font-size: 30px;
-	word-spacing: 0px;
-}
-
-.portfolio-entry > p {
-	color: #333;
-	margin: 20px 0 0;
+	min-width: 285px;
 }
 
 .container {
 	width: 90%;
 	max-width: 650px;
-	margin: auto auto 100px;
+	margin: 50px auto;
 }
 
-.logo {
-	margin: 50px 0 20px;
-	text-align: center;
+/* Text styling */
+
+.logo::before {
+	content: '\1F44B' '\1F3FC';
 }
 
-.logo a {
-	color: #FFF;
-	font-family: "Montserrat";
-	font-size: 40px;
-	font-weight: 900;
-	letter-spacing: .03em;
-	line-height: 1em;
-	text-shadow: -1px 1px 0 #000,
-				 1px 3px 0 #00000090,
-				 1px -1px 0 #000,
-				 -1px -1px 0 #000;
+a {
+	color: var(--link-color);
+	font-weight: 600;
+	text-decoration: none;
 }
 
-.navigation {
-	border-top: 1px solid #000;
+a:hover {
+	text-decoration: underline;
 }
 
-.navigation ul {
-	display: flex;
-	list-style: none;
-	padding: 0;
+:not(img)::selection {
+	background-color: var(--text-highlight-color);
 }
 
-.navigation ul li {
-	padding: 0;
-	margin: 0;
-	flex: 1;
-	text-align: center;
+img::selection {
+	opacity: 0%;
 }
 
-.header {
-	border-top: 1px solid #000;
+h1 {
+	font-size: 48px;
+	margin: auto auto 15px;
 }
 
-.content {
-	margin: 20px 0 0;
+h2 {
+	font-size: 32px;
+	margin: auto auto 20px;
 }
 
-.footer {
-	border-top: 1px solid #000;
+h3 {
+	font-size: 24px;
+	margin: auto auto 20px;
 }
 
-.footer p {
-	margin: 10px 0 0;
+p {
+	margin: auto auto 20px;
+	font-size: 16px;
+	line-height: 1.66em;
 }
 
-.float-left {
-	float: left;
-}
-
-.float-right {
-	float: right;
+li {
+	font-size: 20px;
+	line-height: 1.5em;
 }
 
 blockquote {
@@ -173,4 +106,110 @@ blockquote p:before {
 
 blockquote p:after {
 	content: close-quote;
+}
+
+/* Portfolio entries */
+
+.portfolio {
+	display: grid;
+	gap: 25px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: auto;
+}
+
+.portfolio-entry {
+	background-image: linear-gradient(transparent 50%, 50%, var(--portfolio-background-color) 50%);
+	border: 1px solid #000000;
+	filter: drop-shadow(0 0 1px #000000);
+}
+
+.portfolio-entry img {
+	height: 100%;
+	width: 100%;
+	
+	border-bottom: 1px solid #00000050;
+	vertical-align: middle;
+}
+
+/* Portfolio button links */
+
+.portfolio-buttons {
+	display: flex;
+	gap: 0 30px;
+	grid-template-columns: repeat(3, 1fr);
+	flex-direction: row-reverse;
+	align-items: center;
+	
+	padding: 5px 10px 5px 5px;
+}
+
+.button-android:before {
+	font-family: 'Font Awesome 5 Brands';
+	font-size: 26px;
+	
+	content: '\f3ab';
+	color: var(--portfolio-buttons-color);
+	
+	position: relative;
+	top: -1px;
+}
+
+.button-ios:before {
+	font-family: 'Font Awesome 5 Brands';
+	font-size: 32px;
+	
+	content: '\f179';
+	color: var(--portfolio-buttons-color);
+	
+	position: relative;
+	top: -2px;
+}
+
+.button-youtube:before {
+	font-family: 'Font Awesome 5 Brands';
+	font-size: 32px;
+	
+	content: '\f167';
+	color: var(--portfolio-buttons-color);
+}
+
+.button-internet:before {
+	font-family: 'Font Awesome 5 Free';
+	font-size: 29px;
+	
+	content: '\f0ac';
+	color: var(--portfolio-buttons-color);
+	
+	position: relative;
+	top: 1px;
+}
+
+.portfolio-buttons a:hover {
+	text-decoration: none;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 425px), (max-device-width: 425px) {
+	.portfolio {
+		gap: 15px;
+	}
+	
+	.portfolio-buttons {
+		gap: 20px;
+	}
+	
+	.button-android:before {
+		font-size: 13px;
+		top: -1px;
+	}
+
+	.button-ios:before {
+		font-size: 16px;
+		top: -1px;
+	}
+
+	.button-youtube:before {
+		font-size: 16px;
+	}
 }
