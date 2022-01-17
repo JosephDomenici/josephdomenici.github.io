@@ -10,15 +10,27 @@
 	--background-color: #FCFCFC;
 	--text-color: #333;
 	--text-highlight-color: khaki;
-	--link-color: deepskyblue;
-	--portfolio-background-color: tomato; /* aquamarine cadetblue deepskyblue khaki tomato */
-	--portfolio-buttons-color: #FFF;
+	--link-color: dodgerblue;
+	
+	--name-highlight-color: orangered;
+	
+	--portfolio-background-color: tomato; /* aquamarine cadetblue deepskyblue tomato */
+	--portfolio-entry-border-color: #000;
+	--portfolio-buttons-color: #FCFCFC;
 }
 
 @media(prefers-color-scheme: dark) {
     :root {
-		--background-color: #333;
+		/*  https://blog.karenying.com/posts/50-shades-of-dark-mode-gray#youtube-web */
+		
+		--background-color: #181818;
 		--text-color: #FCFCFC;
+		--text-highlight-color: #555;
+		--link-color: deepskyblue;
+		
+		--name-highlight-color: tomato;
+		
+		--portfolio-entry-border-color: #FCFCFC;
 	}
 }
 
@@ -39,11 +51,17 @@ html {
 	margin: 50px auto;
 }
 
-/* Text styling */
+/* Ad hoc styling */
 
 .logo::before {
 	content: '\1F44B' '\1F3FC';
 }
+
+.name-highlight {
+	color: var(--name-highlight-color);
+}
+
+/* Text styling */
 
 a {
 	color: var(--link-color);
@@ -119,8 +137,8 @@ blockquote p:after {
 
 .portfolio-entry {
 	background-image: linear-gradient(transparent 50%, 50%, var(--portfolio-background-color) 50%);
-	border: 1px solid #000000;
-	filter: drop-shadow(0 0 1px #000000);
+	border: 1px solid var(--portfolio-entry-border-color);
+	filter: drop-shadow(0 0 1px var(--portfolio-entry-border-color));
 }
 
 .portfolio-entry img {
@@ -211,5 +229,10 @@ blockquote p:after {
 
 	.button-youtube:before {
 		font-size: 16px;
+	}
+	
+	.button-internet:before {
+		font-size: 14px;
+		top: -1px;
 	}
 }
