@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 /* Base style */
+
 :root {
 	/* https://www.sessions.edu/color-calculator/ */
 	
@@ -14,7 +15,7 @@
 	
 	--name-highlight-color: orangered;
 	
-	--portfolio-background-color: tomato; /* aquamarine cadetblue deepskyblue tomato */
+	--portfolio-background-color: tomato;
 	--portfolio-entry-border-color: #000;
 	--portfolio-buttons-color: #FCFCFC;
 }
@@ -23,9 +24,9 @@
     :root {
 		/*  https://blog.karenying.com/posts/50-shades-of-dark-mode-gray#youtube-web */
 		
-		--background-color: #181818;
-		--text-color: #FCFCFC;
-		--text-highlight-color: #555;
+		--background-color: #20222B;
+		--text-color: #E6ECF0;
+		--text-highlight-color: #585960;
 		--link-color: deepskyblue;
 		
 		--name-highlight-color: tomato;
@@ -42,23 +43,36 @@ html {
 	background-color: var(--background-color);
 	color: var(--text-color);
 	
-	min-width: 285px;
+	min-width: 360px;
 }
 
 .container {
 	width: 90%;
 	max-width: 650px;
-	margin: 50px auto;
+	margin: 50px auto 100px;
 }
 
 /* Ad hoc styling */
 
 .logo::before {
-	content: '\1F44B' '\1F3FC';
+	content: '\1F44B''\1F3FC';
 }
 
 .name-highlight {
 	color: var(--name-highlight-color);
+}
+
+.footer {
+	user-select; none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	
+	float: right;
+	filter: opacity(30%);
+}
+
+.footer:hover {
+	filter: opacity(100%);
 }
 
 /* Text styling */
@@ -107,23 +121,9 @@ li {
 	line-height: 1.5em;
 }
 
-blockquote {
-	border-left: 4px solid #CCCCCC;
-	margin: auto;
-}
-
-blockquote p {
-	font-weight: 600;
-	font-style: italic;
-	margin: 0 0 20px 20px;
-}
-
-blockquote p:before {
-	content: open-quote;
-}
-
-blockquote p:after {
-	content: close-quote;
+hr {
+	border: 0;
+	border-bottom: 1px solid #00000010;
 }
 
 /* Portfolio entries */
@@ -133,6 +133,7 @@ blockquote p:after {
 	gap: 25px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-auto-rows: auto;
+	margin: auto auto 30px;
 }
 
 .portfolio-entry {
@@ -158,16 +159,19 @@ blockquote p:after {
 	flex-direction: row-reverse;
 	align-items: center;
 	
-	padding: 5px 10px 5px 5px;
+	padding: 5px 10px 5px;
+}
+
+.portfolio-buttons a:hover {
+	text-decoration: none;
 }
 
 .button-android:before {
 	font-family: 'Font Awesome 5 Brands';
-	font-size: 26px;
+	font-size: 25px;
 	
 	content: '\f3ab';
 	color: var(--portfolio-buttons-color);
-	
 	position: relative;
 	top: -1px;
 }
@@ -193,7 +197,7 @@ blockquote p:after {
 
 .button-internet:before {
 	font-family: 'Font Awesome 5 Free';
-	font-size: 29px;
+	font-size: 28px;
 	
 	content: '\f0ac';
 	color: var(--portfolio-buttons-color);
@@ -202,13 +206,9 @@ blockquote p:after {
 	top: 1px;
 }
 
-.portfolio-buttons a:hover {
-	text-decoration: none;
-}
-
 /* Media queries */
 
-@media screen and (max-width: 425px), (max-device-width: 425px) {
+@media screen and (max-width: 450px), (max-device-width: 450px) {
 	.portfolio {
 		gap: 15px;
 	}
@@ -218,21 +218,21 @@ blockquote p:after {
 	}
 	
 	.button-android:before {
-		font-size: 13px;
-		top: -1px;
+		font-size: 19px;
+		top: 0px;
 	}
 
 	.button-ios:before {
-		font-size: 16px;
+		font-size: 24px;
 		top: -1px;
 	}
 
 	.button-youtube:before {
-		font-size: 16px;
+		font-size: 24px;
 	}
 	
 	.button-internet:before {
-		font-size: 14px;
-		top: -1px;
+		font-size: 21px;
+		top: 2px;
 	}
 }
