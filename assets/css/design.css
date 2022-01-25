@@ -10,6 +10,7 @@
 	
 	--background-color: #FCFCFC;
 	--text-color: #333;
+	--header-color: #333;
 	--text-highlight-color: khaki;
 	--link-color: dodgerblue;
 	
@@ -26,6 +27,7 @@
 		
 		--background-color: #20222B;
 		--text-color: #E6ECF0;
+		--header-color: #FCFCFC;
 		--text-highlight-color: #585960;
 		--link-color: deepskyblue;
 		
@@ -101,11 +103,13 @@ h1 {
 }
 
 h2 {
+	color: var(--header-color);
 	font-size: 32px;
 	margin: auto auto 20px;
 }
 
 h3 {
+	color: var(--header-color);
 	font-size: 24px;
 	margin: auto auto 20px;
 }
