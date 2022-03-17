@@ -14,11 +14,12 @@
 	--text-highlight-color: khaki;
 	--link-color: dodgerblue;
 	
-	--name-highlight-color: orangered;
+	--name-highlight-color: tomato;
 	
 	--portfolio-background-color: tomato;
 	--portfolio-entry-border-color: #000;
 	--portfolio-buttons-color: #FCFCFC;
+	--portfolio-buttons-hover-color: #701C1C;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -30,8 +31,6 @@
 		--header-color: #FCFCFC;
 		--text-highlight-color: #585960;
 		--link-color: deepskyblue;
-		
-		--name-highlight-color: tomato;
 		
 		--portfolio-entry-border-color: #FCFCFC;
 	}
@@ -46,12 +45,14 @@ html {
 	color: var(--text-color);
 	
 	min-width: 360px;
+	max-width: 675px;
+	width: 90%;
+	margin: auto;
 }
 
 .container {
-	width: 90%;
-	max-width: 650px;
-	margin: 50px auto 100px;
+	margin: auto;
+	padding: 50px 0;
 }
 
 /* Ad hoc styling */
@@ -78,6 +79,12 @@ html {
 }
 
 /* Text styling */
+
+iframe {
+	width: 100%;
+	height: 600px;
+	border: none;
+}
 
 a {
 	color: var(--link-color);
@@ -136,7 +143,7 @@ hr {
 	display: grid;
 	gap: 25px;
 	grid-template-columns: repeat(2, 1fr);
-	grid-auto-rows: auto;
+	grid-template-rows: auto;
 	margin: auto auto 30px;
 }
 
@@ -170,13 +177,21 @@ hr {
 	text-decoration: none;
 }
 
+.button-android:before, .button-ios:before, .button-youtube:before, .button-internet:before {
+	color: var(--portfolio-buttons-color);
+	position: relative;
+	
+}
+
+.button-android:hover::before, .button-ios:hover::before, .button-youtube:hover::before, .button-internet:hover::before {
+	color: var(--portfolio-buttons-hover-color);
+}
+
 .button-android:before {
 	font-family: 'Font Awesome 5 Brands';
 	font-size: 25px;
 	
 	content: '\f3ab';
-	color: var(--portfolio-buttons-color);
-	position: relative;
 	top: -1px;
 }
 
@@ -185,9 +200,6 @@ hr {
 	font-size: 32px;
 	
 	content: '\f179';
-	color: var(--portfolio-buttons-color);
-	
-	position: relative;
 	top: -2px;
 }
 
@@ -196,7 +208,6 @@ hr {
 	font-size: 32px;
 	
 	content: '\f167';
-	color: var(--portfolio-buttons-color);
 }
 
 .button-internet:before {
@@ -204,9 +215,6 @@ hr {
 	font-size: 28px;
 	
 	content: '\f0ac';
-	color: var(--portfolio-buttons-color);
-	
-	position: relative;
 	top: 1px;
 }
 
