@@ -1,0 +1,59 @@
+/* Imports */
+
+@import url(fontawesome-all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/* Base style */
+
+:root {
+	/* https://www.sessions.edu/color-calculator/ */
+	
+	--background-color: #FCFCFC;
+	--text-color: #333;
+	--header-color: #333;
+	--text-highlight-color: khaki;
+	--link-color: dodgerblue;
+	
+	--name-highlight-color: tomato;
+	
+	--portfolio-background-color: tomato;
+	--portfolio-entry-border-color: #000;
+	--portfolio-buttons-color: #FCFCFC;
+	--portfolio-buttons-hover-color: #701C1C;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+		/*  https://blog.karenying.com/posts/50-shades-of-dark-mode-gray#youtube-web */
+		
+		--background-color: #20222B;
+		--text-color: #E6ECF0;
+		--header-color: #FCFCFC;
+		--text-highlight-color: #585960;
+		--link-color: deepskyblue;
+		
+		--portfolio-entry-border-color: #FCFCFC;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+	
+	font-family: "Segoe UI";
+	background-color: var(--background-color);
+	color: var(--text-color);
+	
+	min-width: 360px;
+	max-width: 675px;
+	width: 90%;
+	margin: auto;
+}
+
+.section-header {
+	position: sticky;
+	background: var(--background-color);
+	box-shadow: 0 15px rgba(252, 252, 252, .3);
+	top: 0;
+	padding: 1em 0 1em;
+}
