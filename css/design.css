@@ -15,7 +15,7 @@
 	--text-highlight-color: khaki;
 	--link-color: dodgerblue;
 	
-	--name-highlight-color: tomato;
+	--name-highlight-color: #FF5C5C; /* tomato */
 	
 	--portfolio-background-color: tomato;
 	--portfolio-entry-border-color: #000;
@@ -47,7 +47,7 @@ html {
 	background-color: var(--background-color);
 	color: var(--text-color);
 	
-	min-width: 400px;
+	min-width: 360px;
 	max-width: 700px;
 	width: 90%;
 	margin: auto;
@@ -60,11 +60,11 @@ html {
 
 /* Ad hoc styling */
 
-.logo::before {
-	content: '\1F44B''\1F3FC';
-	font-size: 32px;
-	position: relative;
-	bottom: 5px;
+.avatar {
+	display: block;
+	margin: auto;
+	width: 180px;
+	height: 180px;
 }
 
 .name-highlight {
