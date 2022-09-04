@@ -18,7 +18,7 @@
 	--name-highlight-color: #FF5C5C; /* tomato */
 	
 	--portfolio-background-color: tomato;
-	--portfolio-entry-border-color: #000;
+	--portfolio-entry-border-color: #000000;
 	--portfolio-buttons-color: #FCFCFC;
 	--portfolio-buttons-hover-color: #701C1C;
 }
@@ -43,7 +43,7 @@ html {
 	
 	font-family: "Source Sans Pro", "Segoe UI";
 	font-weight: 400;
-	font-size: 17px;
+	font-size: 18px;
 	background-color: var(--background-color);
 	color: var(--text-color);
 	
@@ -104,9 +104,16 @@ img::selection {
 	opacity: 0%;
 }
 
+p {
+	margin: auto auto 1em;
+	font-size: 1rem;
+	line-height: 1.66em;
+}
+
 h1, h2, h3 {
 	font-family: "Montserrat", sans-serif;
 	color: var(--header-color);
+	font-weight: bold;
 	line-height: 1.66em;
 }
 
@@ -120,12 +127,6 @@ h2 {
 
 h3 {
 	font-size: 24px;
-}
-
-p {
-	margin: auto auto 20px;
-	font-size: 1rem;
-	line-height: 1.66em;
 }
 
 hr {
@@ -144,9 +145,9 @@ hr {
 }
 
 .portfolio-entry {
-	background-image: linear-gradient(transparent 50%, 50%, var(--portfolio-background-color) 50%);
+	background-image: linear-gradient(transparent 50%, 50%, var(--portfolio-background-color) 50%);	
 	border: 1px solid var(--portfolio-entry-border-color);
-	filter: drop-shadow(0 0 1px var(--portfolio-entry-border-color));
+	filter: drop-shadow(0px 0px 1px var(--portfolio-entry-border-color));
 }
 
 .portfolio-entry img {
@@ -207,7 +208,7 @@ hr {
 }
 
 .button-internet:before {
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 5 Free Solid';
 	font-size: 28px;
 	
 	content: '\f0ac';
