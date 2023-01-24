@@ -1,8 +1,7 @@
 /* Imports */
 
 @import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Base style */
 
@@ -10,17 +9,12 @@
 	/* https://www.sessions.edu/color-calculator/ */
 	
 	--background-color: #FCFCFC;
-	--text-color: #3C3C3C;
+	--text-color: #333;
 	--header-color: #333;
 	--text-highlight-color: khaki;
 	--link-color: dodgerblue;
 	
 	--name-highlight-color: #FF5C5C; /* tomato */
-	
-	--portfolio-background-color: tomato;
-	--portfolio-entry-border-color: #000000;
-	--portfolio-buttons-color: #FCFCFC;
-	--portfolio-buttons-hover-color: #701C1C;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -32,8 +26,6 @@
 		--header-color: #FCFCFC;
 		--text-highlight-color: #585960;
 		--link-color: deepskyblue;
-		
-		--portfolio-entry-border-color: #FCFCFC;
 	}
 }
 
@@ -41,21 +33,62 @@ html {
 	scroll-behavior: smooth;
 	text-rendering: optimizeLegibility;
 	
-	font-family: "Source Sans Pro", "Segoe UI";
+	font-family: "Inter", sans-serif;
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 17px;
 	background-color: var(--background-color);
 	color: var(--text-color);
 	
 	min-width: 360px;
-	max-width: 700px;
-	width: 90%;
+	max-width: 600px;
 	margin: auto;
+	padding: 0px 20px 0px 20px;
 }
 
 .container {
 	margin: auto 10px;
 	padding: 50px 0;
+}
+
+/* Text styling */
+
+a {
+	color: var(--link-color);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	margin: auto auto 1em;
+	font-size: 1rem;
+	line-height: 1.6em;
+}
+
+h1, h2, h3 {
+	color: var(--header-color);
+	font-weight: bold;
+	line-height: 1.6em;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid #00000010;
 }
 
 /* Ad hoc styling */
@@ -84,164 +117,11 @@ html {
 	filter: opacity(100%);
 }
 
-/* Text styling */
-
-a {
-	color: var(--link-color);
-	font-weight: 600;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-:not(img)::selection {
-	background-color: var(--text-highlight-color);
-}
-
-img::selection {
-	opacity: 0%;
-}
-
-p {
-	margin: auto auto 1em;
-	font-size: 1rem;
-	line-height: 1.66em;
-}
-
-h1, h2, h3 {
-	font-family: "Montserrat", sans-serif;
-	color: var(--header-color);
-	font-weight: bold;
-	line-height: 1.66em;
-}
-
-h1 {
-	font-size: 48px;
-}
-
-h2 {
-	font-size: 32px;
-}
-
-h3 {
-	font-size: 24px;
-}
-
-hr {
-	border: 0;
-	border-bottom: 1px solid #00000010;
-}
-
-/* Portfolio entries */
-
 .portfolio {
 	display: grid;
-	gap: 25px;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: auto;
-	margin: auto auto 30px;
+	grid-gap: 10px;
 }
 
-.portfolio-entry {
-	background-image: linear-gradient(transparent 50%, 50%, var(--portfolio-background-color) 50%);	
-	border: 1px solid var(--portfolio-entry-border-color);
-	filter: drop-shadow(0px 0px 1px var(--portfolio-entry-border-color));
-}
-
-.portfolio-entry img {
-	height: 100%;
-	width: 100%;
-	
-	border-bottom: 1px solid #00000050;
-	vertical-align: middle;
-}
-
-/* Portfolio button links */
-
-.portfolio-buttons {
-	display: flex;
-	gap: 0 30px;
-	grid-template-columns: repeat(3, 1fr);
-	flex-direction: row-reverse;
-	align-items: center;
-	
-	padding: 5px 10px 5px;
-}
-
-.portfolio-buttons a:hover {
-	text-decoration: none;
-}
-
-.button-android:before, .button-ios:before, .button-youtube:before, .button-internet:before {
-	color: var(--portfolio-buttons-color);
-	position: relative;
-	
-}
-
-.button-android:hover::before, .button-ios:hover::before, .button-youtube:hover::before, .button-internet:hover::before {
-	color: var(--portfolio-buttons-hover-color);
-}
-
-.button-android:before {
-	font-family: 'Font Awesome 5 Brands';
-	font-size: 25px;
-	
-	content: '\f3ab';
-	top: -1px;
-}
-
-.button-ios:before {
-	font-family: 'Font Awesome 5 Brands';
-	font-size: 32px;
-	
-	content: '\f179';
-	top: -2px;
-}
-
-.button-youtube:before {
-	font-family: 'Font Awesome 5 Brands';
-	font-size: 32px;
-	
-	content: '\f167';
-}
-
-.button-internet:before {
-	font-family: 'Font Awesome 5 Free Solid';
-	font-size: 28px;
-	
-	content: '\f0ac';
-	top: 1px;
-}
-
-/* Media queries */
-
-@media screen and (max-width: 450px), (max-device-width: 450px) {
-	.portfolio {
-		gap: 15px;
-	}
-	
-	.portfolio-buttons {
-		gap: 20px;
-	}
-	
-	.button-android:before {
-		font-size: 19px;
-		top: 0px;
-	}
-
-	.button-ios:before {
-		font-size: 24px;
-		top: -1px;
-	}
-
-	.button-youtube:before {
-		font-size: 24px;
-	}
-	
-	.button-internet:before {
-		font-size: 21px;
-		top: 2px;
-	}
+.portfolio p {
+	margin-bottom: -10px;
 }
