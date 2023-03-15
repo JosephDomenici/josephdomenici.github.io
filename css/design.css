@@ -6,15 +6,15 @@
 /* Base style */
 
 :root {
-	/* https://www.sessions.edu/color-calculator/ */
+	/* 	https://www.sessions.edu/color-calculator/
+		https://www.myndex.com/APCA/
+	*/
 	
-	--background-color: #FCFCFC;
-	--text-color: #333;
+	--background-color: #FFF;
+	--title-color: #000;
 	--header-color: #333;
-	--text-highlight-color: khaki;
+	--text-color: #444;
 	--link-color: dodgerblue;
-	
-	--name-highlight-color: #FF5C5C; /* tomato */
 }
 
 @media(prefers-color-scheme: dark) {
@@ -22,9 +22,9 @@
 		/*  https://blog.karenying.com/posts/50-shades-of-dark-mode-gray#youtube-web */
 		
 		--background-color: #20222B;
-		--text-color: #E6ECF0;
+		--title-color: #FFF;
 		--header-color: #FCFCFC;
-		--text-highlight-color: #585960;
+		--text-color: #E6ECF0;
 		--link-color: deepskyblue;
 	}
 }
@@ -69,20 +69,23 @@ p {
 }
 
 h1, h2, h3 {
-	color: var(--header-color);
 	font-weight: bold;
 	line-height: 1.6em;
 }
 
 h1 {
+	color: var(--title-color);
 	font-size: 48px;
+	margin-bottom: -15px;
 }
 
 h2 {
+	color: var(--header-color);
 	font-size: 32px;
 }
 
 h3 {
+	color: var(--header-color);
 	font-size: 24px;
 }
 
