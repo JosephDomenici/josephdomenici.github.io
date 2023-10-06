@@ -68,6 +68,10 @@ p {
 	line-height: 1.6em;
 }
 
+ul {
+	list-style-type: circle;
+}
+
 h1, h2, h3 {
 	font-weight: bold;
 	line-height: 1.6em;
@@ -95,17 +99,6 @@ hr {
 }
 
 /* Ad hoc styling */
-
-.avatar {
-	display: block;
-	margin: auto;
-	width: 180px;
-	height: 180px;
-}
-
-.name-highlight {
-	color: var(--name-highlight-color);
-}
 
 .footer {
 	user-select; none;
