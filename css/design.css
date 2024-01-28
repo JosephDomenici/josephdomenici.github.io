@@ -15,6 +15,12 @@
 	--header-color: #333;
 	--text-color: #444;
 	--link-color: dodgerblue;
+	
+	scrollbar-width: none;
+}
+
+:root::-webkit-scrollbar {
+	display: none;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -39,13 +45,13 @@ html {
 	background-color: var(--background-color);
 	color: var(--text-color);
 	
-	min-width: 360px;
+	min-width: 320px;
 	max-width: 600px;
 	margin: auto;
 	padding: 0px 20px 0px 20px;
 }
 
-.container {
+body {
 	margin: auto 10px;
 	padding: 50px 0;
 }
@@ -74,23 +80,24 @@ ul {
 
 h1, h2, h3 {
 	font-weight: bold;
-	line-height: 1.6em;
 }
 
 h1 {
 	color: var(--title-color);
 	font-size: 48px;
-	margin-bottom: -15px;
+	line-height: 1em;
 }
 
 h2 {
 	color: var(--header-color);
 	font-size: 32px;
+	line-height: 1.5em;
 }
 
 h3 {
 	color: var(--header-color);
 	font-size: 24px;
+	line-height: 1.5em;
 }
 
 hr {
@@ -98,7 +105,39 @@ hr {
 	border-bottom: 1px solid #00000010;
 }
 
-/* Ad hoc styling */
+/* Portfolio styling */
+
+.portfolio {
+	display: grid;
+	grid-gap: 15px;
+}
+
+.portfolio > div {
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	padding: 10px 10px 0px;
+}
+
+.portfolio details {
+	padding: 0em 0.5em 0em;
+}
+
+.portfolio summary {
+	cursor: pointer;
+	font-size: 1.33em;
+	padding: 0.33em 0em 0em;
+	user-select: none;
+}
+
+.portfolio details[open] {
+	border-bottom: 1px solid #00000010;
+}
+
+.portfolio details[open] summary {
+	padding: 0.33em 0em 0.5em;
+}
+
+/* Footer styling */
 
 .footer {
 	user-select; none;
@@ -111,13 +150,4 @@ hr {
 
 .footer:hover {
 	filter: opacity(100%);
-}
-
-.portfolio {
-	display: grid;
-	grid-gap: 10px;
-}
-
-.portfolio p {
-	margin-bottom: -10px;
 }
