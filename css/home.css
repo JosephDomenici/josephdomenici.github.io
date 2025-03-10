@@ -1,0 +1,62 @@
+/* Base style */
+
+@import url("base.css");
+
+/* Home page */
+
+.grid-personal {
+	display: grid;
+	gap: 0 4em;
+	grid-template-columns: auto 1fr;
+	margin: auto;
+}
+
+.grid-present {
+	display: grid;
+	gap: 0.2em 1.6em;
+	grid-template-columns: auto auto 1fr;
+	margin: auto;
+}
+
+.grid-past {
+	display: grid;
+	gap: 0.2em 1.6em;
+	grid-template-columns: auto auto 1fr;
+	margin: auto;
+}
+
+.grid-portfolio {
+	display: grid;
+	gap: 1px;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: 0.3em auto 0;
+}
+
+.unselectable {
+	user-select: none;
+	-webkit-user-select: none;
+	
+	white-space: pre;
+}
+
+@media screen and (width <= 500px) {
+	.grid-present, .grid-past {
+		grid-template-columns: auto 1fr;
+	}
+	
+	.grid-present div:nth-child(3n - 2), .grid-past div:nth-child(3n - 2) {
+		grid-row: span 2;
+	}
+	
+	.grid-present div:nth-child(3n - 1), .grid-past div:nth-child(3n - 1) {
+		grid-row: span 1;
+	}
+	
+	.grid-present div:nth-child(3n), .grid-past div:nth-child(3n) {
+		grid-row: span 1;
+	}
+	
+	.grid-portfolio {
+		grid-template-columns: 1fr 1fr;
+	}
+}

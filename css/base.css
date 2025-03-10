@@ -1,0 +1,125 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Base style */
+
+:root::-webkit-scrollbar {
+	display: none;
+}
+
+html {
+	/*
+	 * https://www.sessions.edu/color-calculator/
+	 * https://www.myndex.com/APCA/
+	*/
+	
+	scrollbar-width: none;
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	background: #FCFCFC;
+	color: #222;
+	font-family: "Roboto Mono", "Courier New";
+	font-weight: 400;
+	font-size: 14px;
+	
+	margin: auto;
+	padding: 25px;
+	min-width: 270px; /* 320px accessibility standard - (padding * 2) */
+	max-width: 550px;
+}
+
+a {
+	color: dodgerblue;
+}
+
+h1 {
+	color: #134f5C;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+h2 {
+	color: #222;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+h3 {
+	color: #444;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+ol {
+	list-style-type: decimal;
+	
+	ol {
+		list-style-type: lower-alpha;
+	}
+}
+
+hr {
+	border: none;
+	border-top: 1px solid #00000015;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+blockquote {
+	color: #888;
+	font-style: italic;
+	
+	border-left: solid 2px #eee;
+	margin: 0;
+	padding: 0px 10px;
+}
+
+.wrapper-title a {
+	text-decoration: none;
+}
+
+.title {
+	color: #134f5C;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.subtitle {
+	color: #222;
+	font-size: 16px;
+	opacity: 0.33;
+}
+
+.wrapper-footer {
+	color: #222;
+	display: flex;
+	opacity: 0.33;
+	justify-content: space-between;
+	
+	a {
+		color: #222;
+		text-decoration: none;
+	}
+}
+
+.img-border {
+	border: solid 2px #555;
+	border-style: solid;
+}
+
+@media screen and (width <= 600px) {
+	iframe {
+		width: 100%;
+	}
+	
+	ul {
+		padding-inline-start: 25px;
+	}
+}

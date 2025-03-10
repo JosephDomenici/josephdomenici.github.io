@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../../css/portfolio.css">
+		
+		<meta property="og:description" content="Joseph Domenici is an experienced game designer specializing in complex game systems and economies. Click to learn more."/>
+		<meta property="og:title" content="Joseph Domenici"/>
+		<meta property="og:site_name" content="josephdomenici.com">
+		<meta property="og:url" content="https://josephdomenici.com"/>
+		<meta property="og:image" content="https://josephdomenici.com/images/Profile.png"/>
+		<meta property="og:image:width" content="316">
+		<meta property="og:image:height"  content="316">
+		<meta property="og:type" content="website"/>
+		<meta property="og:locale" content="en_US"/>
+		
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@josephdomenici">
+		<meta name="twitter:creator" content="@josephdomenici">
+		<meta name="twitter:title" content="Joseph Domenici">
+		<meta name="twitter:description" content="Joseph Domenici is an experienced game designer specializing in complex game systems and economies. Click to learn more.">
+		<meta name="twitter:image" content="https://josephdomenici.com/images/Profile.png">
+		
+		<!-- https://realfavicongenerator.net/ -->
+		<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="../../favicons/favicon.svg" />
+		<link rel="shortcut icon" href="../../favicons/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png" />
+		<link rel="manifest" href="../../favicons/site.webmanifest" />
+		
+		<title>Joseph Domenici - Game Designer</title>
+		<meta name="description" content="Joseph Domenici is a veteran game designer specializing in complex game systems and economies. Click to learn more.">
+		<meta name="author" content="Joseph Domenici">
+	</head>
+	<body>
+		<header class="wrapper-title">
+			<a href="https://josephdomenici.com">
+				<div class="title">JOSEPH DOMENICI</div>
+				<div class="subtitle">GAME DESIGNER</div>
+			</a>
+		</header>
+			<hr>
+			</br>
+		<main class="wrapper-body">
+			<h1>WWE UNDEFEATED</h1>
+			<p>WWE Undefeated was a AA mobile fighting game featuring fast-paced PvP combat, customizable combos, and high-flying WWE action.</p>
+			<img src="../../images/Portfolio_WWEUndefeated_Header.png">
+			<ul>
+				<li><b>Press Release: </b><a href="https://www.animocabrands.com/nway-unveils-wwe-undefeated">"nWay unveils WWEⓇ Undefeated...."</a></li>
+				<li><b>WWE Trailer: </b><a href="https://www.youtube.com/watch?v=8fYoCzlIJkU">"WWE Undefeated available now...."</a></li>
+				<li><b>WWE Activation: </b><a href="https://www.youtube.com/watch?v=Xv6aqndl5Hk">DaParty Plays WWE UNDEFEATED!!!....</a></li>
+			</ul>
+			<p>I was the Senior Systems Designer on this project from production through release. I designed most major meta systems and took over economy design after the Lead Systems Designer left during production.</p>
+			<ul>
+				<li><b>Role:</b> Senior Systems Designer</li>
+				<li><b>Platforms:</b> iOS/Android</li>
+				<li><b>Tools:</b> Unity, Google Sheets/Docs, Snowflake, Amplitude</li>
+				<li><b>Team size:</b> 40+</li>
+			</ul>
+			<h1>Responsibilities</h1>
+			<ul>
+				<li>Managed the growth of a mid-level systems designer</li>
+				<li>Designed core F2P economy and systems such as matchmaking, progression, combat stats, etc.</li>
+				<li>Planned quarterly content roadmap with discipline leads</li>
+			</ul>
+			<h1>Highlights</h1>
+			<h2>Product-Driven Design</h2>
+			<p>During my onboarding I discovered that the team had ported systems from previous titles that they no longer understood. The original designers were long gone by this point, and the systems were considered "good enough" to not warrant investigation.</p>
+			<p>This didn't sit right with me. How could we understand the business impact of our systems without knowing their performance?</p>
+			<p>I set to work analyzing our live games and discovered that:</p>
+			<ol>
+				<li>Our MMR system had low predictive power at estimating fair matchups</li>
+				<li>Our matchmaking was region-locked and players often failed to find matches</li>
+				<li>Some of our environments and shaders were poorly optimized for certain device models</li>
+			</ol>
+			<h3>1. MMR Revamp</h3>
+			<p>I determined that adjusting our existing MMR system wasn't going to move the needle. It needed to be fully replaced with something more robust. I proposed that we implement the Elo rating system and perform a one-time ratings adjustment to all players using historical win/loss data.</p>
+			<img src="../../images/PointBiserialCorrelation.png">
+			<p>The outcome was a massive improvement in predictive accuracy. A pairwise correlation analysis showed that our implementation was ~75% accurate at predicting veteran player matchups, which is on par with ratings systems used in professional sports.</p>
+			<ul>
+				<li>The model is fairly accurate for D0 players since having played even just a few more matches than your opponent gives you a huge advantage in terms of game knowledge</li>
+				<li>The model dips in accuracy up until ~2000 MMR due to the use of bots to artificially progress players through lower PvP leagues. We stopped matching those players against bots around that point in progression</li>
+			</ul>
+			<p>Our implementation of Elo is slightly modified to include an 'inflation' parameter that artificially inflates new player progress. Here's a <a href="https://docs.wreckleague.xyz/tournaments/how-is-my-pvp-tournament-rating-calculated">blog post</a> I wrote explaining the design intent behind this implementation:</p>
+			<blockquote>"Inflationary points help players climb the leaderboard at lower ranks. Engagement is rewarded since there's upwards MMR pressure regardless of whether you win or lose. This is particularly helpful for players who join late and need to quickly catch up to the competition. Past a certain MMR threshold this value will be set to 0, meaning that rank inflation ceases to exist and score calculation returns to being purely competitive."</blockquote>
+			<h3>2. Cross-Region Matchmaking</h3>
+			<p>I led a system redesign that would allow players to match with each other cross-region so long as their respective pings were under a defined threshold. The system worked like this:</p>
+			<ol>
+				<li>Login
+					<ol>
+						<li>You ping all of our region combat servers</li>
+						<li>Your ping results get stored on your client</li>
+					</ol>
+				</li>
+				<li>Matchmaking
+					<ol>
+						<li>Our matchmaker flags which regions you're eligible to matchmake for based on your ping results vs. a ping threshold (e.g., <=150ms)</li>
+						<li>Our matchmaker searches against the subset of queued players whose eligible regions intersect with your eligible regions</li>
+						<li>Our matchmaker finds you a match against a suitably skilled opponent</li>
+					</ol>
+				</li>
+			</ol>
+			<p>This system was highly successful at connecting players in low-population geos like Eastern Europe with players from other regions while still maintaining high match quality.</p>
+			<p>In some of these low-population regions over 95% of matches were played cross-region. This allowed us to retain these players for longer than if they'd had nobody to match against.</p>
+			<h3>3. Asset Optimization</h3>
+			<p>I met with our art leads and presented a high-level overview showing which environment assets had the worst device performance, as well as environments which underperformed on specific device models.</p>
+			<p>While I wasn't directly involved with the improvements, we were able to substantially increase client FPS across most device models. This let us raise our minimum spec requirements which in turn expanded our serviceable addressable market.</p>
+		</main>
+			</br>
+			<hr>
+		<footer class="wrapper-footer">
+			<p><a href="https://josephdomenici.com">Home ↩</a></p>
+		</footer>
+	</body>
+</html>
