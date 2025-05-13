@@ -46,11 +46,11 @@
 		<main class="wrapper-body">
 			<h1>WWE UNDEFEATED</h1>
 			<p>WWE Undefeated was a AA mobile fighting game featuring fast-paced PvP combat, customizable combos, and high-flying WWE action.</p>
-			<a href="../../images/Portfolio_WWEUndefeated_Header.png"><img src="../../images/Portfolio_WWEUndefeated_Header.png"></a>
+			<a href="../../images/Portfolio_WWEUndefeated_Header.png" target="_blank"><img src="../../images/Portfolio_WWEUndefeated_Header.png"></a>
 			<ul>
-				<li><b>Press Release: </b><a href="https://www.animocabrands.com/nway-unveils-wwe-undefeated">"nWay unveils WWEⓇ Undefeated...."</a></li>
-				<li><b>WWE Trailer: </b><a href="https://www.youtube.com/watch?v=8fYoCzlIJkU">"WWE Undefeated available now...."</a></li>
-				<li><b>WWE Activation: </b><a href="https://www.youtube.com/watch?v=Xv6aqndl5Hk">DaParty Plays WWE UNDEFEATED!!!....</a></li>
+				<li><b>Press Release: </b><a href="https://www.animocabrands.com/nway-unveils-wwe-undefeated" target="_blank">"nWay unveils WWEⓇ Undefeated...."</a></li>
+				<li><b>WWE Trailer: </b><a href="https://www.youtube.com/watch?v=8fYoCzlIJkU" target="_blank">"WWE Undefeated available now...."</a></li>
+				<li><b>WWE Activation: </b><a href="https://www.youtube.com/watch?v=Xv6aqndl5Hk" target="_blank">DaParty Plays WWE UNDEFEATED!!!....</a></li>
 			</ul>
 			<p>I was the Senior Systems Designer on this project from production through release. I designed most major meta systems and took over economy design after the Lead Systems Designer left during production.</p>
 			<ul>
@@ -76,14 +76,14 @@
 				<li>Some of our environments and shaders were poorly optimized for certain device models</li>
 			</ol>
 			<h3>1. MMR Revamp</h3>
-			<p>I determined that adjusting our existing MMR system wasn't going to move the needle. It needed to be fully replaced with something more robust. I proposed that we implement the Elo rating system and perform a one-time ratings adjustment to all players using historical win/loss data.</p>
-			<a href="../../images/PointBiserialCorrelation.png"><img src="../../images/PointBiserialCorrelation.png"></a>
+			<p>I modeled several adjustments to our existing MMR system and determined that even extreme changes wouldn't sufficiently improve its predictive power. The system needed to be fully replaced with something more robust. I proposed that we implement the Elo rating system and perform a one-time ratings adjustment to all players using historical win/loss data.</p>
+			<a href="../../images/PointBiserialCorrelation.png" target="_blank"><img src="../../images/PointBiserialCorrelation.png"></a>
 			<p>The outcome was a massive improvement in predictive accuracy. A pairwise correlation analysis showed that our implementation was ~75% accurate at predicting veteran player matchups, which is on par with ratings systems used in professional sports.</p>
 			<ul>
 				<li>The model is fairly accurate for D0 players since having played even just a few more matches than your opponent gives you a huge advantage in terms of game knowledge</li>
 				<li>The model dips in accuracy up until ~2000 MMR due to the use of bots to artificially progress players through lower PvP leagues. We stopped matching those players against bots around that point in progression</li>
 			</ul>
-			<p>Our implementation of Elo is slightly modified to include an 'inflation' parameter that artificially inflates new player progress. Here's a <a href="https://docs.wreckleague.xyz/tournaments/how-is-my-pvp-tournament-rating-calculated">blog post</a> I wrote explaining the design intent behind this implementation:</p>
+			<p>Our implementation of Elo is slightly modified to include an 'inflation' parameter that artificially inflates new player progress. Here's a <a href="https://docs.wreckleague.xyz/tournaments/how-is-my-pvp-tournament-rating-calculated" target="_blank">blog post</a> I wrote explaining the design intent behind this implementation:</p>
 			<blockquote>"Inflationary points help players climb the leaderboard at lower ranks. Engagement is rewarded since there's upwards MMR pressure regardless of whether you win or lose. This is particularly helpful for players who join late and need to quickly catch up to the competition. Past a certain MMR threshold this value will be set to 0, meaning that rank inflation ceases to exist and score calculation returns to being purely competitive."</blockquote>
 			<h3>2. Cross-Region Matchmaking</h3>
 			<p>I led a system redesign that would allow players to match with each other cross-region so long as their respective pings were under a defined threshold. The system worked like this:</p>
@@ -105,8 +105,8 @@
 			<p>This system was highly successful at connecting players in low-population geos like Eastern Europe with players from other regions while still maintaining high match quality.</p>
 			<p>In some of these low-population regions over 95% of matches were played cross-region. This allowed us to retain these players for longer than if they'd had nobody to match against.</p>
 			<h3>3. Asset Optimization</h3>
-			<p>I met with our art leads and presented a high-level overview showing which environment assets had the worst device performance, as well as environments which underperformed on specific device models.</p>
-			<p>While I wasn't directly involved with the improvements, we were able to substantially increase client FPS across most device models. This let us raise our minimum spec requirements which in turn expanded our serviceable addressable market.</p>
+			<p>I met with our art leads and presented a high-level analysis showing which environment assets had the worst device performance on average, as well as environments which underperformed on specific popular device models.</p>
+			<p>While I wasn't directly involved with the graphical optimizations, we were able to substantially increase client FPS across most device models. This let us lower our minimum spec requirements which in turn expanded our serviceable addressable market.</p>
 		</main>
 			</br>
 			<hr>
