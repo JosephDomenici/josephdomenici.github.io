@@ -1,6 +1,6 @@
 /* Imports */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* Base style */
 
@@ -20,38 +20,49 @@ html {
 }
 
 body {
-	background: #FCFCFC;
-	color: #222;
-	font-family: "Roboto Mono", "Courier New";
-	font-weight: 400;
-	font-size: 14px;
+	background: #161619;
+	color: #F0EFED;
+	font-family: "Lato";
+	font-size: 16px;
+	line-height: 1.5em;
 	
 	margin: auto;
-	padding: 25px;
+	padding: 50px;
 	min-width: 270px; /* 320px accessibility standard - (padding * 2) */
 	max-width: 550px;
 }
 
 a {
-	color: dodgerblue;
+	color: #5BF;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	color: #FFF;
+	font-family: "Inter";
+	font-weight: 800;
+	line-height: 1em;
+	margin: 1em 0 0;
+	
+	a {
+		color: #FFF;
+	}
 }
 
 h1 {
-	color: #134f5C;
-	font-size: 20px;
-	font-weight: 800;
+	font-size: 3em;
+}
+
+body > h1 {
+	margin: 0;
 }
 
 h2 {
-	color: #222;
-	font-size: 16px;
-	font-weight: 800;
+	font-size: 2em;
 }
 
 h3 {
-	color: #444;
-	font-size: 14px;
-	font-weight: 800;
+	font-size: 1em;
 }
 
 ol {
@@ -64,54 +75,31 @@ ol {
 
 hr {
 	border: none;
-	border-top: 1px solid #00000015;
+	border-top: 1px solid #FFFFFF33;
 }
 
 img {
 	height: 100%;
 	width: 100%;
-}
-
-blockquote {
-	color: #888;
-	font-style: italic;
 	
-	border-left: solid 2px #eee;
-	margin: 0;
-	padding: 0px 10px;
+	border: solid 1px #FFFFFF50;
+	border-style: solid;
 }
 
-.wrapper-title a {
-	text-decoration: none;
-}
-
-.title {
-	color: #134f5C;
-	font-size: 24px;
-	font-weight: 600;
-}
-
-.subtitle {
-	color: #222;
-	font-size: 16px;
-	opacity: 0.33;
+.unselectable {
+	user-select: none;
+	-webkit-user-select: none;
+	
+	white-space: pre;
 }
 
 .wrapper-footer {
-	color: #222;
 	display: flex;
-	opacity: 0.33;
 	justify-content: space-between;
 	
-	a {
-		color: #222;
-		text-decoration: none;
+	p {
+		margin: 0;
 	}
-}
-
-.img-border {
-	border: solid 2px #555;
-	border-style: solid;
 }
 
 @media screen and (width <= 600px) {
